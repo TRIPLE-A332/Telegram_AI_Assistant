@@ -1,0 +1,11 @@
+python-telegram-bot==20.7
+google-generativeai==0.8.5
+openai-whisper
+ffmpeg-python
+requests
+tqdm
+torch  # Required for whisper
+numpy  # Also used by whisper internally
+
+# Optional: if you want to switch to .env for secrets
+# python-dotenv
