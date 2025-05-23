@@ -26,9 +26,13 @@ A voice and text-based AI assistant for Telegram, powered by **Google Gemini (Ge
 ## Project Structure
 
 ├── bot_main.py # Main Telegram bot logic
-├── tokens.py # API keys (excluded from Git)
+
+├── .env # API keys (excluded from Git)
+
 ├── requirements.txt # Python dependencies
+
 ├── .gitignore # Git exclusions
+
 ├── README.md # Project documentation
 
 ## Install dependencies:
