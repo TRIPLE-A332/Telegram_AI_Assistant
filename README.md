@@ -1,4 +1,6 @@
-# Telegram AI Assistant
+# Telegram AI Assistant 
+
+Link to Bot - https://t.me/GeminiPoweredAssistant_bot 
 
 A voice and text-based AI assistant for Telegram, powered by **Google Gemini (Generative AI)** and **OpenAI Whisper** for transcription.
 
