@@ -8,7 +8,7 @@ from telegram.ext import CommandHandler
 import google.generativeai as genai
 import json
 
-import whisper
+from faster_whisper import WhisperModel
 import requests
 
 from dotenv import load_dotenv
@@ -47,7 +47,7 @@ def call_gemini(prompt: str) -> dict:
 
 
 # Load Whisper model once
-model = whisper.load_model("base") 
+model = WhisperModel("tiny", compute_type="int8") 
 
 # Download voice file
 async def download_voice_file(file_id: str, bot) -> str:
@@ -68,8 +68,8 @@ async def handle_voice(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Transcribing...")
 
     wav_file = await download_voice_file(file_id, bot)
-    result = model.transcribe(wav_file)
-    transcription = result["text"]
+    segments, _ = model.transcribe("voice.wav")
+    transcription = " ".join(segment.text for segment in segments)
 
     await update.message.reply_text(f"You said: {transcription}\n Thinking...")
 
